@@ -1,0 +1,237 @@
+[
+ {
+  "slug": "palm-finance",
+  "title": "Ledger",
+  "desc": ""
+ },
+ {
+  "slug": "able-toss",
+  "title": "Fair Toss",
+  "desc": "A classroom probability lab. Flip a coin or roll dice, watch the histogram fill, and compare the run to a fair model."
+ },
+ {
+  "slug": "arch-mandelbrot",
+  "title": "Mandelbrot",
+  "desc": "Explore the Mandelbrot and Julia sets. Drag to pan, click to zoom, and morph a Julia seed."
+ },
+ {
+  "slug": "honey-pilot-fleet-brook",
+  "title": "Vesper",
+  "desc": "Vesper is a playable desk synthesizer with on-screen keys, a filter, an envelope, and a live trace."
+ },
+ {
+  "slug": "moss-moss-wind-berry",
+  "title": "Locus",
+  "desc": "Plot one or more functions, then zoom, pan, and read the value under the cursor."
+ },
+ {
+  "slug": "palm-vivid-cap-horizon",
+  "title": "Emberwatch",
+  "desc": "Hold the dusk causeway. Place towers, earn coin from kills, and survive every wave."
+ },
+ {
+  "slug": "royal-baker-turbo-jolly",
+  "title": "Coriolis",
+  "desc": "Steer a warp-speed starfield. Set the speed and density, then boost."
+ },
+ {
+  "slug": "bolt-swift-earth-grove",
+  "title": "Periapsis",
+  "desc": "Fling planets and watch them orbit, slingshot, and collide."
+ },
+ {
+  "slug": "clear-earth-wood-grove",
+  "title": "Flashstrip",
+  "desc": "A carnival photo booth. Live camera, filter presets, a countdown, and a strip of prints."
+ },
+ {
+  "slug": "giant-swift-fleet-swift",
+  "title": "Pica",
+  "desc": "A retro pixel desk. Draw on a resizable grid and export a crisp PNG."
+ },
+ {
+  "slug": "timber-civic-pilot-flora",
+  "title": "Lamina",
+  "desc": "A full-screen viscous wave surface. Drag to send ripples, then let them settle."
+ },
+ {
+  "slug": "prism-hazel-crisp-iris",
+  "title": "Lumenstep",
+  "desc": "A dusk-cliff platformer. Run, double-jump, and carry the lantern to the flag."
+ },
+ {
+  "slug": "crystal-ocean-juniper-blaze",
+  "title": "Soundings",
+  "desc": "A force-directed chart of a fictional hydrographic archive. Drag stations, follow ties, and search the soundings."
+ },
+ {
+  "slug": "king-lagoon-zinc-valley",
+  "title": "Meridian",
+  "desc": "Meridian is a force-directed atlas. Drag nodes, zoom the field, search, and inspect the ties."
+ },
+ {
+  "slug": "lark-lagoon-king-blaze",
+  "title": "Folio",
+  "desc": "A quiet markdown notebook. Write, search, and preview notes saved on this device."
+ },
+ {
+  "slug": "civic-dove-blade-cactus",
+  "title": "Still",
+  "desc": "A calm Pomodoro timer with a progress ring, session counts, and a task list."
+ },
+ {
+  "slug": "dawn-grove-bloom-flora",
+  "title": "Stillwater",
+  "desc": "A full-screen fluid surface. Drag to send expanding waves."
+ },
+ {
+  "slug": "orchid-sapphire-swift-bloom",
+  "title": "AUREL — Halo One",
+  "desc": "Orbit, light, and finish Halo One, a sculptural wireless speaker."
+ },
+ {
+  "slug": "maple-ivory-orbit-umbra",
+  "title": "Plinth",
+  "desc": "Drop spheres, boxes, and cylinders. Stack them, bounce them, and shove the pile around."
+ },
+ {
+  "slug": "falcon-hill-able-light",
+  "title": "Meridian",
+  "desc": "Meridian is a choropleth atlas of sample living-condition figures. Pan, zoom, and compare countries."
+ },
+ {
+  "slug": "bamboo-xenon-fjord-shale",
+  "title": "Dotloom",
+  "desc": "A pixel drawing desk with a limited retro palette, fill, undo, and PNG export."
+ },
+ {
+  "slug": "ever-topaz-bamboo-bold",
+  "title": "Hearthmaze",
+  "desc": "A first-person brick maze. Cross the grass, dodge the warden, and find the gate."
+ },
+ {
+  "slug": "cosmic-gem-rapid-pixel",
+  "title": "Murmur",
+  "desc": "A murmuration of boids. Separation, alignment, and cohesion — scatter the flock with your cursor."
+ },
+ {
+  "slug": "slate-topaz-beam-dove",
+  "title": "Vela",
+  "desc": "A music visualizer for your microphone or a track — bars, circular modes, and color themes."
+ },
+ {
+  "slug": "tulip-xenon-fair-cabin",
+  "title": "Lumen",
+  "desc": "A music visualizer for your microphone or a track. Bars, circular modes, and color themes."
+ },
+ {
+  "slug": "birch-palm-pilot-breeze",
+  "title": "Marquee Booth",
+  "desc": "A pocket photo booth with a live camera, film filters, a countdown, and a strip you can save."
+ },
+ {
+  "slug": "pilot-wolf-branch-fluid",
+  "title": "Stillwater",
+  "desc": "A full-screen fluid surface. Drag to send waves, then tune viscosity, strength, and color."
+ },
+ {
+  "slug": "royal-star-yonder-willow",
+  "title": "Orrery",
+  "desc": "A living model of the Sun and eight planets. Pause, change speed, and focus any world."
+ },
+ {
+  "slug": "solar-cap-berry-rapid",
+  "title": "Canopy",
+  "desc": "Grow a fractal tree. Shape the branching angle, depth, and length, then let the wind move it."
+ },
+ {
+  "slug": "beam-cabin-harbor-vector",
+  "title": "Fieldline",
+  "desc": "Plot a vector field, edit the formula, and watch particles follow the flow."
+ },
+ {
+  "slug": "bay-umbra-bamboo-qr",
+  "title": "Pressmark — QR code generator",
+  "desc": "Make a QR code from a URL or any text. Choose colors, size, and error correction, then download a PNG."
+ },
+ {
+  "slug": "leaf-wood-arrow-earth",
+  "title": "Epicycles",
+  "desc": "Draw a shape and watch spinning circles rebuild it as a Fourier series."
+ },
+ {
+  "slug": "lotus-gold-drum-terra",
+  "title": "Cadence",
+  "desc": "Practice chord progressions in any key with strum and arpeggio patterns, tempo, and looping playback."
+ },
+ {
+  "slug": "honey-bamboo-kaleidoscope-plaza",
+  "title": "Prismwell",
+  "desc": "A pocket kaleidoscope. Move inside the glass and it repeats you."
+ },
+ {
+  "slug": "bamboo-topaz-conway-life",
+  "title": "Lattice",
+  "desc": "Conway's Game of Life. Paint a grid, step the rules, and place patterns from the glider to the Gosper gun."
+ },
+ {
+  "slug": "lion-bolt-mist-quorum",
+  "title": "Quorum",
+  "desc": "Open a question, vote once, and watch the tally move."
+ },
+ {
+  "slug": "mint-dune-king-drum",
+  "title": "STRIKE",
+  "desc": "A 16-step drum machine with kick, snare, hats, percussion, swing, and tempo."
+ },
+ {
+  "slug": "glow-honey-sail-craft",
+  "title": "Facet Range",
+  "desc": "Fly a stylized low-poly mountain range. Aim with the mouse, thrust with the keys."
+ },
+ {
+  "slug": "sunny-tulip",
+  "title": "Sieve",
+  "desc": "Watch the sieve of Eratosthenes cross out composites, then tap any integer for its prime factors."
+ },
+ {
+  "slug": "beacon-sky-glow",
+  "title": "Eddy",
+  "desc": "An interactive particle field that spirals toward your pointer."
+ },
+ {
+  "slug": "able-cherry-lagoon-sky",
+  "title": "Folio",
+  "desc": "A three-lane kanban board. Add, edit, and drag cards. Saved on this device."
+ },
+ {
+  "slug": "reef-plum-harbor-tulip",
+  "title": "Quinary",
+  "desc": "Five-swatch palette instrument. Lock colors, shuffle the rest, copy hex, RGB, and HSL, check contrast, and export CSS variables."
+ },
+ {
+  "slug": "scarlet-wave-glow-ever",
+  "title": "Ledgerline",
+  "desc": "Sample subscription revenue, growth, and churn. Filters, trends, and a product breakdown — all offline."
+ },
+ {
+  "slug": "juniper-brush-jolly-flora",
+  "title": "Hearthmaze",
+  "desc": "A first-person hedge maze. Find the cream gate."
+ },
+ {
+  "slug": "vivid-wind-crane-thunder",
+  "title": "Sextant",
+  "desc": "A night globe of featured places. Drag to turn it, then choose a place to bring it forward."
+ },
+ {
+  "slug": "opal-flame-timber-clover",
+  "title": "Lantern Yard — 12 December, Kowdiar",
+  "desc": "One night of talks, a long supper table, and live sound under paper lanterns. Kowdiar, 12 December 2026."
+ },
+ {
+  "slug": "cabin-grove-garden-kind",
+  "title": "Daymark",
+  "desc": "A quiet daybook for habits: daily check-offs, a streak calendar, and completion stats."
+ }
+]

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tiny Apps, Perforated: a stamp album of {{TOTAL}} grok.me apps</title>
+<meta name="description" content="A stamp album of {{TOTAL}} small web apps: games, instruments, simulations, maths toys and desk tools. Lift a stamp to read its plaque, then visit the app.">
+<meta property="og:title" content="Tiny Apps, Perforated">
+<meta property="og:description" content="{{TOTAL}} small web apps, each pressed onto a stamp. Lift one and post yourself there.">
+<meta name="theme-color" content="#1b1410">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 40'%3E%3Crect width='32' height='40' rx='2' fill='%23f6edd8'/%3E%3Crect x='5' y='5' width='22' height='30' fill='%23d9a441'/%3E%3Ccircle cx='16' cy='18' r='6' fill='%232a1d14'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,500&family=Special+Elite&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f6edd8;--ink:#2a1d14;--wood:#1b1410;--gold:#d9a441;--gold-hi:#f2d27c;--cancel:#e0513f}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(1200px 700px at 20% -10%, #3b2a1e 0%, transparent 60%),
+    radial-gradient(900px 600px at 100% 100%, #2a1b2e 0%, transparent 60%),
+    var(--wood);
+  background-attachment:fixed;
+  color:#efe3c8; font-family:'Cormorant Garamond',Georgia,serif; overflow-x:hidden;
+}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.07;z-index:0;
+  background-image:repeating-linear-gradient(45deg,#fff 0 1px,transparent 1px 4px),repeating-linear-gradient(-45deg,#fff 0 1px,transparent 1px 4px)}
+a{color:inherit}
+header{text-align:center;padding:clamp(40px,8vw,90px) 20px 10px;position:relative}
+.eyebrow{font-family:'Special Elite',monospace;letter-spacing:.4em;font-size:.75rem;color:var(--gold);text-transform:uppercase}
+h1{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(2.4rem,7vw,5.2rem);line-height:1.05;margin:.25em 0;
+  background:linear-gradient(100deg,#f7e3a6 0%,#d9a441 35%,#fff3c9 50%,#c0832a 70%,#f2d27c 100%);background-size:200% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;animation:foil 7s linear infinite}
+@keyframes foil{to{background-position:-200% 0}}
+header p.lead{font-style:italic;font-size:clamp(1.1rem,2.4vw,1.45rem);max-width:34em;margin:0 auto;color:#d8c7a3;line-height:1.4}
+.roll{margin:20px auto 0;font-family:'Special Elite',monospace;font-size:.82rem;color:#a8936c;letter-spacing:.06em;max-width:40em;line-height:1.6}
+.roll b{color:var(--gold-hi);font-weight:400}
+.roll .tick{display:inline-block;width:.6em;height:.6em;border-radius:50%;background:var(--cancel);margin-right:.5em;vertical-align:.05em;animation:pulse 1.2s ease-in-out infinite}
+.roll.done .tick{animation:none;background:#7fb37a}
+@keyframes pulse{50%{opacity:.25}}
+
+nav.sets{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 10px;max-width:980px;margin:28px auto 0;padding:0 20px}
+nav.sets a{font-family:'Special Elite',monospace;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:#e6d3a8;
+  padding:9px 14px;border-radius:3px;background:#2b2018;box-shadow:inset 0 0 0 1px #d9a44133;transition:background .2s,color .2s,transform .2s}
+nav.sets a span{color:var(--gold);margin-left:.4em}
+nav.sets a:hover,nav.sets a:focus-visible{background:var(--gold);color:#1b1410;transform:translateY(-2px);outline:none}
+nav.sets a:hover span,nav.sets a:focus-visible span{color:#1b1410}
+
+main{position:relative;z-index:1}
+.set{max-width:1200px;margin:0 auto;padding:clamp(56px,8vw,96px) 24px 0;scroll-margin-top:10px}
+.set-head{text-align:center;margin-bottom:clamp(26px,4vw,40px)}
+.set-head h2{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(1.8rem,4vw,2.7rem);color:var(--gold-hi);line-height:1.1}
+.set-head p{font-style:italic;font-size:clamp(1.05rem,2vw,1.25rem);color:#cdbb97;margin-top:.35em}
+main{overflow-x:clip}
+.album{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(30px,4vw,52px) clamp(22px,3vw,40px);perspective:1400px}
+.slot{display:flex;flex-direction:column;align-items:center;gap:12px;flex:0 1 200px;min-width:0}
+.stamp{position:relative;width:100%;aspect-ratio:4/5;cursor:pointer;border:0;background:none;padding:0;color:inherit;font:inherit;
+  filter:drop-shadow(0 10px 14px rgba(0,0,0,.55)) drop-shadow(0 2px 2px rgba(0,0,0,.6));
+  transform:rotate(var(--r));
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),filter .35s;
+  -webkit-tap-highlight-color:transparent}
+.js .set:not(.seen) .stamp{opacity:0}
+.js .set.seen .stamp:not(.landed){animation:drop .8s cubic-bezier(.2,.9,.3,1.2) both;animation-delay:calc(var(--i)*70ms)}
+@keyframes drop{from{opacity:0;transform:translateY(-40px) rotateX(50deg) rotate(calc(var(--r)*3))}to{opacity:1;transform:rotate(var(--r))}}
+.stamp:hover,.stamp:focus-visible{transform:rotate(0) translateY(-8px) scale(1.04);filter:drop-shadow(0 22px 22px rgba(0,0,0,.6));outline:none}
+.stamp:focus-visible .paper{outline:3px solid var(--gold);outline-offset:-3px}
+.paper{position:absolute;inset:0;background:var(--paper);padding:15px;overflow:hidden;
+  -webkit-mask:
+    radial-gradient(circle at 8px 0,#0000 4px,#000 4.6px) top/16px 8px repeat-x,
+    radial-gradient(circle at 8px 8px,#0000 4px,#000 4.6px) bottom/16px 8px repeat-x,
+    radial-gradient(circle at 0 8px,#0000 4px,#000 4.6px) left/8px 16px repeat-y,
+    radial-gradient(circle at 8px 8px,#0000 4px,#000 4.6px) right/8px 16px repeat-y,
+    linear-gradient(#000,#000) center/calc(100% - 16px) calc(100% - 16px) no-repeat;
+  mask:
+    radial-gradient(circle at 8px 0,#0000 4px,#000 4.6px) top/16px 8px repeat-x,
+    radial-gradient(circle at 8px 8px,#0000 4px,#000 4.6px) bottom/16px 8px repeat-x,
+    radial-gradient(circle at 0 8px,#0000 4px,#000 4.6px) left/8px 16px repeat-y,
+    radial-gradient(circle at 8px 8px,#0000 4px,#000 4.6px) right/8px 16px repeat-y,
+    linear-gradient(#000,#000) center/calc(100% - 16px) calc(100% - 16px) no-repeat}
+.art{position:relative;width:100%;height:100%;overflow:hidden;box-shadow:0 0 0 1px rgba(0,0,0,.4);background:#14100c}
+.art img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center;filter:saturate(1.08) contrast(1.04)}
+.gloss{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;overflow:hidden;
+  background:
+    radial-gradient(circle at var(--mx,30%) var(--my,15%),rgba(255,255,255,.42),rgba(255,255,255,0) 38%),
+    linear-gradient(115deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,.04) 38%,rgba(255,255,255,0) 40%,rgba(255,255,255,.1) 62%,rgba(255,255,255,0) 64%)}
+.gloss::after{content:"";position:absolute;inset:-20%;background:linear-gradient(110deg,transparent 42%,rgba(255,255,255,.5) 50%,transparent 58%);
+  transform:translateX(-120%);animation:sweep 6s ease-in-out infinite;animation-delay:calc(var(--i,0)*.45s)}
+@keyframes sweep{0%,55%{transform:translateX(-120%)}85%,100%{transform:translateX(120%)}}
+.paper::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 18px rgba(120,80,30,.35)}
+.denom{position:absolute;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:26px 9px 8px;text-align:left;
+  font-family:'Playfair Display',serif;font-weight:800;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.85);background:linear-gradient(transparent,rgba(10,6,3,.82) 55%)}
+.denom b{font-size:1.28rem;line-height:1.05;letter-spacing:-.01em}
+.denom small{font-family:'Special Elite',monospace;font-weight:400;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;opacity:.92;line-height:1.3;color:var(--gold-hi)}
+
+/* cancellation postmark: appears when the site answers the roll call */
+.pm{position:absolute;top:-7%;right:-13%;width:62%;pointer-events:none;color:var(--cancel);opacity:0;transform:scale(1.7) rotate(-24deg);
+  transition:opacity .25s,transform .45s cubic-bezier(.2,1.4,.3,1);filter:drop-shadow(0 0 1px rgba(0,0,0,.6))}
+.pm text{font-family:'Special Elite',monospace;fill:currentColor}
+.franked .pm{opacity:.95;transform:scale(1) rotate(-12deg)}
+.cap{display:flex;gap:.9em;align-items:baseline;font-family:'Special Elite',monospace;font-size:.74rem;letter-spacing:.18em;color:#a8936c;text-transform:uppercase}
+.cap a{color:var(--gold-hi);text-decoration:none;padding:6px 2px;border-bottom:1px dashed #d9a44166}
+.cap a:hover,.cap a:focus-visible{color:#fff;border-bottom-color:var(--gold-hi);outline:none}
+.cap .nr{display:none;color:var(--cancel)}
+.returned .cap .nr{display:inline}
+
+/* ---------- 3D viewer ---------- */
+.overlay{position:fixed;inset:0;z-index:20;display:grid;place-items:center;visibility:hidden;opacity:0;
+  background:radial-gradient(circle at 50% 40%,rgba(20,12,8,.8),rgba(0,0,0,.95));backdrop-filter:blur(8px);
+  transition:opacity .35s,visibility .35s;perspective:1600px;overflow:auto;padding:24px 20px}
+.overlay.open{visibility:visible;opacity:1}
+.scene{position:relative;display:flex;flex-direction:column;align-items:center;transform-style:preserve-3d;
+  transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .15s ease-out}
+.scene.settle{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.big{position:relative;width:min(70vw,320px,calc(42vh*.8));aspect-ratio:4/5;transform-style:preserve-3d;
+  transform:translateZ(60px) scale(.3) rotateY(-180deg);opacity:0;
+  transition:transform .9s cubic-bezier(.2,.9,.25,1.15),opacity .4s;filter:drop-shadow(0 30px 30px rgba(0,0,0,.7))}
+.overlay.open .big{transform:translateZ(60px) scale(1) rotateY(0);opacity:1}
+.big .denom b{font-size:1.6rem}
+.big .denom small{font-size:.68rem}
+.plaque{position:relative;margin-top:24px;width:min(88vw,470px);padding:18px 22px 22px;border-radius:6px;text-align:center;
+  background:linear-gradient(160deg,#fff6dd,#eadcb8);color:var(--ink);
+  box-shadow:0 18px 30px rgba(0,0,0,.6),inset 0 0 0 1px rgba(120,80,30,.35),inset 0 0 0 5px #f1e5c4,inset 0 0 0 6px rgba(120,80,30,.35);
+  transform:translateZ(110px) rotateX(-8deg);opacity:0;transition:transform .8s .15s cubic-bezier(.2,.9,.25,1.2),opacity .5s .15s}
+.overlay.open .plaque{opacity:1;transform:translateZ(110px) rotateX(0)}
+.plaque .no{font-family:'Special Elite',monospace;font-size:.7rem;letter-spacing:.3em;color:#94681f;text-transform:uppercase}
+.plaque h2{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(1.5rem,5vw,2.1rem);margin:.15em 0 .1em;line-height:1.1}
+.plaque .place{font-style:italic;font-size:1.1rem;color:#6e5030;margin-bottom:.5em}
+.plaque p.d{font-size:1.18rem;line-height:1.4;color:#3a281a}
+.plaque .meta{display:flex;justify-content:center;gap:6px 16px;margin-top:12px;font-family:'Special Elite',monospace;font-size:.7rem;letter-spacing:.12em;color:#6f5533;text-transform:uppercase;flex-wrap:wrap}
+.visit{display:inline-flex;align-items:center;gap:.6em;margin-top:16px;padding:13px 24px;border-radius:3px;text-decoration:none;
+  background:var(--ink);color:var(--gold-hi);font-family:'Special Elite',monospace;font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;
+  transition:background .2s,transform .2s,color .2s}
+.visit:hover,.visit:focus-visible{background:#7a2e2e;color:#fff3c9;transform:translateY(-2px);outline:none}
+.visit:focus-visible{box-shadow:0 0 0 3px #f1e5c4,0 0 0 5px #7a2e2e}
+.visit:active{transform:translateY(0) scale(.98)}
+.postmark{position:absolute;right:-22px;top:-40px;width:92px;height:92px;opacity:.8;transform:translateZ(30px) rotate(-14deg);pointer-events:none;mix-blend-mode:multiply}
+.close,.nav{position:fixed;z-index:30;width:46px;height:46px;border-radius:50%;border:1px solid #d9a44188;background:#000a;color:var(--gold-hi);font-size:1.3rem;cursor:pointer;display:grid;place-items:center}
+.close{top:16px;right:16px}
+.nav{top:50%;margin-top:-23px}.nav.prev{left:12px}.nav.next{right:12px}
+.close:hover,.nav:hover,.close:focus-visible,.nav:focus-visible{background:var(--gold);color:#1b1410;outline:none}
+footer{text-align:center;padding:clamp(70px,10vw,120px) 20px 50px;font-family:'Special Elite',monospace;font-size:.72rem;color:#8a7756;letter-spacing:.2em;line-height:2;position:relative;z-index:1}
+footer .fin{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(1.6rem,4vw,2.4rem);letter-spacing:0;color:#5e4c35;margin-bottom:10px}
+footer a{color:#b59d72}
+@media (max-width:520px){
+  .set{padding-left:16px;padding-right:16px}
+  .album{gap:30px 18px}
+  .slot{flex:0 0 calc(50% - 9px)}
+  .pm{right:-8%;width:58%}
+  .denom b{font-size:1.02rem}.denom small{font-size:.52rem;letter-spacing:.1em}
+  .cap{font-size:.66rem;letter-spacing:.12em;gap:.6em}
+  .postmark{right:-6px;top:-44px;width:76px;height:76px}
+  .nav{top:auto;bottom:14px;margin-top:0}.nav.prev{left:14px}.nav.next{right:14px}
+  .overlay{padding:64px 14px 78px;place-items:start center}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .js .set:not(.seen) .stamp{opacity:1}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">Est. MMXXVI · The grok.me Postal Union</div>
+  <h1>Tiny Apps, Perforated</h1>
+  <p class="lead">{{TOTAL}} small web apps, each pressed onto a stamp: games, instruments, simulations, maths toys and desk tools. Lift one from the album to read its plaque, then post yourself there.</p>
+  <p class="roll" id="roll" aria-live="polite"><span class="tick" aria-hidden="true"></span>Franking the album: calling each app to see who answers…</p>
+  <nav class="sets" id="setnav" aria-label="Sets in the album"></nav>
+</header>
+
+<main id="album" aria-label="Stamp album"></main>
+
+<footer>
+  <div class="fin">Tiny Apps, Perforated</div>
+  {{TOTAL}} ISSUES · EVERY APP MADE WITH <a href="https://grok.com" rel="noopener">GROK</a> REMIX<br>
+  STAMPS PRESSED FROM SCREENSHOTS, 5 NOVEMBER 2026 · NO REAL POSTAGE VALUE
+</footer>
+
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="vt">
+  <button class="close" id="close" aria-label="Close">✕</button>
+  <button class="nav prev" id="prev" aria-label="Previous stamp">‹</button>
+  <button class="nav next" id="next" aria-label="Next stamp">›</button>
+  <div class="scene" id="scene">
+    <div class="big" id="big"><div class="paper"><div class="art" id="bigArt"></div><div class="gloss" id="bigGloss"></div></div></div>
+    <div class="plaque" id="plaque">
+      <svg class="postmark" viewBox="0 0 100 100" fill="none" stroke="#7a2e2e" stroke-width="2.2" aria-hidden="true"><circle cx="50" cy="50" r="40"/><circle cx="50" cy="50" r="30" stroke-width="1"/><path d="M4 42q22-10 40 0t52 0M4 54q22-10 40 0t52 0M4 66q22-10 40 0t52 0" stroke-width="2"/><defs><path id="pmArc" d="M50 50m-35 0a35 35 0 1 1 70 0"/></defs><text font-family="Special Elite" font-size="8.5" fill="#7a2e2e" stroke="none"><textPath href="#pmArc" startOffset="50%" text-anchor="middle">POSTED · GROK.ME · 2026</textPath></text></svg>
+      <div class="no" id="vno"></div>
+      <h2 id="vt"></h2>
+      <div class="place" id="vplace"></div>
+      <p class="d" id="vd"></p>
+      <div class="meta" id="vmeta"></div>
+      <a class="visit" id="visit" href="#" target="_blank" rel="noopener"><span id="visitLabel">Visit</span><span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</div>
+
+<script>
+/*DATA*/
+document.documentElement.classList.add('js');
+/* Markup below is built from this file's own static data (no user input). Text fields go through esc() anyway. */
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ALL=[];
+SETS.forEach(set=>set.items.forEach(it=>{it.set=set.n;it.url=`https://${it.s}.grok.me`;it.ms=undefined;ALL.push(it)}));
+const pad=n=>String(n).padStart(2,'0');
+const denomOf=s=>`<div class="denom"><small>${esc(s.k)}</small><b>${esc(s.t)}</b></div>`;
+const pmSVG=`<svg class="pm" viewBox="0 0 120 80" aria-hidden="true"><g fill="none" stroke="currentColor"><circle cx="38" cy="40" r="31" stroke-width="2.6"/><circle cx="38" cy="40" r="23" stroke-width="1.1"/><path d="M74 26q11-6 22 0t22 0M74 40q11-6 22 0t22 0M74 54q11-6 22 0t22 0" stroke-width="2.6"/></g><text x="38" y="35" font-size="8" text-anchor="middle" letter-spacing="1">POSTED</text><text class="ms" x="38" y="52" font-size="13" text-anchor="middle"></text></svg>`;
+
+const nav=document.getElementById('setnav'),album=document.getElementById('album');
+let n=0;
+SETS.forEach(set=>{
+  nav.insertAdjacentHTML('beforeend',`<a href="#${set.id}">${esc(set.n)}<span>${set.items.length}</span></a>`);
+  const sec=document.createElement('section');sec.className='set';sec.id=set.id;sec.setAttribute('aria-labelledby',`h-${set.id}`);
+  sec.innerHTML=`<div class="set-head"><h2 id="h-${set.id}">${esc(set.n)}</h2><p>${esc(set.b)}</p></div><div class="album"></div>`;
+  const grid=sec.querySelector('.album');
+  set.items.forEach((s,j)=>{
+    const idx=n++;const r=(((idx*37)%9)-4)*.55;
+    const slot=document.createElement('div');slot.className='slot';s.slot=slot;
+    slot.innerHTML=`<button class="stamp" style="--i:${j};--r:${r}deg" aria-label="${esc(s.t)}, ${esc(s.k)}. Open its plaque."><div class="paper"><div class="art"><img src="shots/${s.s}.jpg" alt="" width="480" height="600" ${idx<12?'loading="eager"':'loading="lazy"'} decoding="async">${denomOf(s)}</div><div class="gloss"></div></div>${pmSVG}</button><div class="cap"><span>No. ${pad(idx+1)}</span><a href="${s.url}" target="_blank" rel="noopener" aria-label="Visit ${esc(s.t)} (opens in a new tab)">Visit ↗</a><span class="nr">no reply</span></div>`;
+    const b=slot.querySelector('.stamp'),g=b.querySelector('.gloss');
+    s.btn=b;
+    b.addEventListener('click',()=>openViewer(idx));
+    b.addEventListener('animationend',e=>{if(e.animationName==='drop')b.classList.add('landed')});
+    b.addEventListener('pointermove',e=>{const q=b.getBoundingClientRect();g.style.setProperty('--mx',((e.clientX-q.left)/q.width*100)+'%');g.style.setProperty('--my',((e.clientY-q.top)/q.height*100)+'%')});
+    grid.appendChild(slot);
+  });
+  album.appendChild(sec);
+});
+
+/* sets drop their stamps in as they scroll into view; a timer guarantees nothing stays hidden */
+const sets=[...document.querySelectorAll('.set')];
+const seeAll=()=>sets.forEach(s=>s.classList.add('seen'));
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('seen');io.unobserve(e.target)}}),{rootMargin:'0px 0px -10% 0px'});
+  sets.forEach(s=>io.observe(s));
+  setTimeout(seeAll,4000);
+}else seeAll();
+
+/* ---------- roll call: ping every app, frank the ones that answer ---------- */
+const roll=document.getElementById('roll');
+let answered=0,silent=0;
+function rollText(){
+  const done=answered+silent===ALL.length;
+  roll.classList.toggle('done',done);
+  roll.innerHTML=`<span class="tick" aria-hidden="true"></span>`+(done
+    ? `<b>${answered} of ${ALL.length}</b> stamps franked just now${silent?`, <b>${silent}</b> sent back unanswered`:''}. Each postmark carries the time that app took to answer you.`
+    : `Franking the album: <b>${answered} of ${ALL.length}</b> apps have answered so far…`);
+}
+function ping(s){
+  const c=new AbortController(),t0=performance.now(),to=setTimeout(()=>c.abort(),8000);
+  return fetch(s.url,{mode:'no-cors',cache:'no-store',signal:c.signal})
+    .then(()=>Math.round(performance.now()-t0)).catch(()=>null).finally(()=>clearTimeout(to));
+}
+ALL.forEach(s=>ping(s).then(ms=>{
+  s.ms=ms;
+  if(ms===null){silent++;s.slot.classList.add('returned')}
+  else{answered++;s.slot.querySelector('.pm .ms').textContent=ms<1000?`${ms}ms`:`${(ms/1000).toFixed(1)}s`;s.btn.classList.add('franked')}
+  rollText();
+  if(ov.classList.contains('open')&&ALL[cur]===s)fill(cur);
+}));
+setTimeout(()=>{ALL.forEach(s=>{if(s.ms===undefined){s.ms=null;silent++;s.slot.classList.add('returned')}});rollText()},9000);
+
+/* ---------- 3D viewer ---------- */
+const ov=document.getElementById('overlay'),scene=document.getElementById('scene'),big=document.getElementById('big');
+let cur=0,opener=null;
+function fill(i){
+  const s=ALL[i];cur=i;
+  document.getElementById('bigArt').innerHTML=`<img src="shots/${s.s}.jpg" alt="Screenshot of ${esc(s.t)}" width="480" height="600">`+denomOf(s);
+  document.getElementById('vno').textContent=`No. ${pad(i+1)} of ${ALL.length} · ${s.set}`;
+  document.getElementById('vt').textContent=s.t;
+  document.getElementById('vplace').textContent=s.k;
+  document.getElementById('vd').textContent=s.d;
+  const st=s.ms===undefined?'Awaiting reply':s.ms===null?'No reply this visit':`Answered in ${s.ms} ms`;
+  document.getElementById('vmeta').innerHTML=`<span>${esc(s.s)}.grok.me</span><span>${st}</span>`;
+  const v=document.getElementById('visit');v.href=s.url;v.setAttribute('aria-label',`Visit ${s.t} (opens in a new tab)`);
+  document.getElementById('visitLabel').textContent=`Visit ${s.t}`;
+}
+function openViewer(i){opener=document.activeElement;fill(i);scene.classList.add('settle');scene.style.setProperty('--rx','0deg');scene.style.setProperty('--ry','0deg');ov.classList.add('open');document.body.style.overflow='hidden';setTimeout(()=>document.getElementById('visit').focus({preventScroll:true}),60)}
+function closeViewer(){ov.classList.remove('open');document.body.style.overflow='';const b=ALL[cur].btn;(b||opener)?.focus({preventScroll:false})}
+function step(d){
+  const nx=(cur+d+ALL.length)%ALL.length;
+  big.style.transition='transform .3s ease-in,opacity .25s';big.style.transform=`translateZ(60px) rotateY(${d>0?-90:90}deg) scale(.8)`;big.style.opacity='0';
+  setTimeout(()=>{fill(nx);big.style.transition='none';big.style.transform=`translateZ(60px) rotateY(${d>0?90:-90}deg) scale(.8)`;void big.offsetWidth;big.style.transition='transform .6s cubic-bezier(.2,.9,.25,1.15),opacity .3s';big.style.transform='';big.style.opacity=''},300);
+}
+document.getElementById('close').onclick=closeViewer;
+document.getElementById('prev').onclick=()=>step(-1);
+document.getElementById('next').onclick=()=>step(1);
+ov.addEventListener('click',e=>{if(e.target===ov)closeViewer()});
+addEventListener('keydown',e=>{
+  if(!ov.classList.contains('open'))return;
+  if(e.key==='Escape')closeViewer();
+  if(e.key==='ArrowRight')step(1);
+  if(e.key==='ArrowLeft')step(-1);
+  if(e.key==='Tab'){
+    const f=[...ov.querySelectorAll('button,a[href]')];const a=f.indexOf(document.activeElement);
+    e.preventDefault();f[(a+(e.shiftKey?-1:1)+f.length)%f.length].focus();
+  }
+});
+function tilt(x,y){
+  const nx=(x/innerWidth-.5)*2,ny=(y/innerHeight-.5)*2;
+  scene.classList.remove('settle');
+  scene.style.setProperty('--ry',(nx*18)+'deg');scene.style.setProperty('--rx',(-ny*14)+'deg');
+  const g=document.getElementById('bigGloss');g.style.setProperty('--mx',(50+nx*45)+'%');g.style.setProperty('--my',(40+ny*45)+'%');
+}
+const fine=matchMedia('(pointer:fine)').matches;
+if(fine){
+  ov.addEventListener('pointermove',e=>tilt(e.clientX,e.clientY));
+  ov.addEventListener('pointerleave',()=>{scene.classList.add('settle');scene.style.setProperty('--rx','0deg');scene.style.setProperty('--ry','0deg')});
+}
+let sx=null;ov.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+ov.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>60)step(dx<0?1:-1);sx=null});
+</script>
+</body>
+</html>
