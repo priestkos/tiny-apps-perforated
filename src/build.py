@@ -20,13 +20,17 @@ DESC = {
 }
 
 SETS = [
-    ('playable', 'Playable', 'Six small games: a causeway to hold, cliffs to run, two mazes, a mountain range to fly and a field of stars.', [
+    ('playable', 'Playable', 'Games to play: hold the causeway, run the cliffs and rails, find the gates and fly through the night.', [
         ('palm-vivid-cap-horizon', 'Tower defence'),
         ('prism-hazel-crisp-iris', 'Cliff platformer'),
         ('ever-topaz-bamboo-bold', 'Brick maze'),
         ('juniper-brush-jolly-flora', 'Hedge maze'),
         ('glow-honey-sail-craft', 'Low-poly flight'),
         ('royal-baker-turbo-jolly', 'Warp starfield'),
+        ('daisy-pilot-horizon-bay', 'Night sortie'),
+        ('lotus-comet-cap-fair', 'Rail runner'),
+        ('quiet-quartz-amber-willow', 'Cliff platformer'),
+        ('gold-charm-wolf-sapphire', 'Garden maze'),
     ]),
     ('instruments', 'Instruments', 'Things that make sound, and two that listen to it.', [
         ('honey-pilot-fleet-brook', 'Desk synthesizer'),
@@ -34,6 +38,7 @@ SETS = [
         ('lotus-gold-drum-terra', 'Chord practice'),
         ('slate-topaz-beam-dove', 'Music visualizer'),
         ('tulip-xenon-fair-cabin', 'Music visualizer'),
+        ('earth-cherry-sage-reef', 'Theremin'),
     ]),
     ('physics', 'Physics & flocks', 'Planets, boxes, birds, branches and water, left to their own rules.', [
         ('bolt-swift-earth-grove', 'Orbit sandbox'),
@@ -45,6 +50,8 @@ SETS = [
         ('timber-civic-pilot-flora', 'Viscous wave surface'),
         ('dawn-grove-bloom-flora', 'Fluid surface'),
         ('pilot-wolf-branch-fluid', 'Tunable fluid surface'),
+        ('clear-zenith-leaf-quiet', 'Orbit sandbox'),
+        ('otter-green-daisy-arrow', 'Solar system model'),
     ]),
     ('mathematics', 'Mathematics', 'Fractals, functions, primes and probability you can poke at.', [
         ('arch-mandelbrot', 'Fractal explorer'),
@@ -71,17 +78,22 @@ SETS = [
         ('lion-bolt-mist-quorum', 'Live poll'),
         ('bay-umbra-bamboo-qr', 'QR code generator'),
         ('reef-plum-harbor-tulip', 'Palette instrument'),
+        ('blend-spark-prism-stone', 'Markdown notebook'),
+        ('eagle-zenith-sand-ruby', 'Habit ledger'),
     ]),
-    ('draw', 'Draw & pose', 'Two pixel desks, a kaleidoscope and two photo booths that want your camera.', [
+    ('draw', 'Draw & pose', 'Pixel desks, kaleidoscopes and photo booths that want your camera.', [
         ('giant-swift-fleet-swift', 'Pixel desk'),
         ('bamboo-xenon-fjord-shale', 'Retro pixel desk'),
         ('honey-bamboo-kaleidoscope-plaza', 'Camera kaleidoscope'),
         ('clear-earth-wood-grove', 'Carnival photo booth'),
         ('birch-palm-pilot-breeze', 'Pocket photo booth'),
+        ('raven-fleet-hazel-eagle', 'Drawing kaleidoscope'),
     ]),
-    ('showcases', 'Showcases', 'A speaker to orbit and finish, and one night under paper lanterns.', [
+    ('showcases', 'Showcases', 'A speaker, a billing desk and evenings under paper lanterns.', [
         ('orchid-sapphire-swift-bloom', 'AUREL speaker'),
         ('opal-flame-timber-clover', '12 December, Kowdiar'),
+        ('spark-flame-zinc-beam', 'Usage billing'),
+        ('storm-gold-trail-winter', '19 December, Kowdiar'),
     ]),
 ]
 

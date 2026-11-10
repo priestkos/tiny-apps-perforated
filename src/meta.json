@@ -233,5 +233,17 @@
   "slug": "cabin-grove-garden-kind",
   "title": "Daymark",
   "desc": "A quiet daybook for habits: daily check-offs, a streak calendar, and completion stats."
- }
+ },
+ {"slug":"spark-flame-zinc-beam","title":"Kiln","desc":"Kiln is the billing desk for usage-based software. Define a meter, attach the contract, and send an invoice finance can sign."},
+ {"slug":"daisy-pilot-horizon-bay","title":"Cinderwake","desc":"Top-down night sortie. Enemy waves, power-ups, and a wake log."},
+ {"slug":"lotus-comet-cap-fair","title":"Ashrail","desc":"Endless night-rail runner. Jump, slide, and chain a combo as the line gets faster."},
+ {"slug":"quiet-quartz-amber-willow","title":"Saltspine","desc":"A dusk cliff platformer. Run, double-jump, and reach the flag."},
+ {"slug":"earth-cherry-sage-reef","title":"Aether","desc":"A mouse and touch theremin. Pitch follows left and right, volume follows up and down."},
+ {"slug":"blend-spark-prism-stone","title":"Quire","desc":"A quiet notebook for markdown notes, kept in this browser."},
+ {"slug":"clear-zenith-leaf-quiet","title":"Apsis","desc":"Fling planets and watch them orbit, slingshot, and collide."},
+ {"slug":"gold-charm-wolf-sapphire","title":"Hearthmaze","desc":"A sunlit first-person hedge maze. Find the cream gate."},
+ {"slug":"eagle-zenith-sand-ruby","title":"Daymark","desc":"A quiet daily ledger for habits, streaks, and the month at a glance."},
+ {"slug":"otter-green-daisy-arrow","title":"Ecliptic","desc":"A quiet orrery. Pause the clock, change its tempo, and fly the camera to any world."},
+ {"slug":"raven-fleet-hazel-eagle","title":"Prismwell","desc":"A pocket kaleidoscope. Drag in the glass and every stroke mirrors into a symmetric pattern."},
+ {"slug":"storm-gold-trail-winter","title":"Lantern Yard","desc":"Lantern Yard — one winter night in Kowdiar. Talks, supper, and live sound. 19 December 2026."}
 ]
