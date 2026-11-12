@@ -253,6 +253,7 @@ function ping(s){
     .then(()=>Math.round(performance.now()-t0)).catch(()=>null).finally(()=>clearTimeout(to));
 }
 ALL.forEach(s=>ping(s).then(ms=>{
+  if(s.ms!==undefined)return;  // the 9s sweep already counted it silent
   s.ms=ms;
   if(ms===null){silent++;s.slot.classList.add('returned')}
   else{answered++;s.slot.querySelector('.pm .ms').textContent=ms<1000?`${ms}ms`:`${(ms/1000).toFixed(1)}s`;s.btn.classList.add('franked')}
