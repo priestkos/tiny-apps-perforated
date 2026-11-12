@@ -114,6 +114,7 @@ total = sum(len(s['items']) for s in out)
 
 tpl = (ROOT / 'src/template.html').read_text(encoding='utf8')
 assert '/*DATA*/' in tpl and '{{TOTAL}}' in tpl
-html = tpl.replace('/*DATA*/', 'const SETS=' + json.dumps(out, ensure_ascii=False) + ';').replace('{{TOTAL}}', str(total))
+data = json.dumps(out, ensure_ascii=False).replace('<', '\\u003c')  # no </script> or <!-- can end the inline script
+html = tpl.replace('/*DATA*/', 'const SETS=' + data + ';').replace('{{TOTAL}}', str(total))
 (ROOT / 'index.html').write_text(html, encoding='utf8', newline='\n')
 print(f'index.html: {total} stamps in {len(out)} sets')

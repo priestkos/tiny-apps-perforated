@@ -24,6 +24,12 @@ def build(edit_meta=None):
         return (Path(tmp) / 'index.html').read_text(encoding='utf8')
 
 
+def set_desc(text, slug='sunny-tulip'):  # a slug with no DESC override in build.py
+    def edit(meta):
+        next(m for m in meta if m['slug'] == slug)['desc'] = text
+    return edit
+
+
 class BuildTest(unittest.TestCase):
     def test_index_matches_build(self):
         self.assertTrue(build() == (ROOT / 'index.html').read_text(encoding='utf8'),
@@ -37,6 +43,14 @@ class BuildTest(unittest.TestCase):
     def test_readme_count_matches_total(self):
         total = len(json.loads((ROOT / 'src/meta.json').read_text(encoding='utf8')))
         self.assertIn(f'links out to {total} small web apps', (ROOT / 'README.md').read_text(encoding='utf8'))
+
+    def test_build_escapes_script_close(self):
+        html = build(set_desc('bad </script><img src=x onerror=alert(1)> <!-- x'))
+        data = re.search(r'const SETS=(.*?);\n', html).group(1)
+        self.assertNotIn('</', data)
+        self.assertNotIn('<!--', data)
+        descs = [i['d'] for s in json.loads(data) for i in s['items']]
+        self.assertIn('bad </script><img src=x onerror=alert(1)> <!-- x', descs)  # text survives intact
 
 
 if __name__ == '__main__':
