@@ -46,3 +46,11 @@ test('a ping answering after the 9s sweep does not un-finish the roll call', asy
   assert.ok(page.els.roll.classList.contains('done'), 'banner stuck on "Franking..."');
   assert.equal(page.get('answered + silent'), page.get('ALL.length'));
 });
+
+test('two quick next clicks advance two stamps', () => {
+  const page = load();
+  page.els.next.onclick();
+  page.els.next.onclick();  // within the 300ms flip
+  page.fire(300);
+  assert.equal(page.get('cur'), 2);
+});

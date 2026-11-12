@@ -280,7 +280,7 @@ function fill(i){
 function openViewer(i){opener=document.activeElement;fill(i);scene.classList.add('settle');scene.style.setProperty('--rx','0deg');scene.style.setProperty('--ry','0deg');ov.classList.add('open');document.body.style.overflow='hidden';setTimeout(()=>document.getElementById('visit').focus({preventScroll:true}),60)}
 function closeViewer(){ov.classList.remove('open');document.body.style.overflow='';const b=ALL[cur].btn;(b||opener)?.focus({preventScroll:false})}
 function step(d){
-  const nx=(cur+d+ALL.length)%ALL.length;
+  const nx=(cur+d+ALL.length)%ALL.length;cur=nx;  // advance now: fill(nx) runs 300ms later
   big.style.transition='transform .3s ease-in,opacity .25s';big.style.transform=`translateZ(60px) rotateY(${d>0?-90:90}deg) scale(.8)`;big.style.opacity='0';
   setTimeout(()=>{fill(nx);big.style.transition='none';big.style.transform=`translateZ(60px) rotateY(${d>0?90:-90}deg) scale(.8)`;void big.offsetWidth;big.style.transition='transform .6s cubic-bezier(.2,.9,.25,1.15),opacity .3s';big.style.transform='';big.style.opacity=''},300);
 }
