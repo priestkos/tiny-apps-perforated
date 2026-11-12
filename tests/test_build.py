@@ -52,6 +52,10 @@ class BuildTest(unittest.TestCase):
         descs = [i['d'] for s in json.loads(data) for i in s['items']]
         self.assertIn('bad </script><img src=x onerror=alert(1)> <!-- x', descs)  # text survives intact
 
+    def test_total_placeholder_in_data_kept(self):
+        html = build(set_desc('costs {{TOTAL}} coins'))
+        self.assertTrue('costs {{TOTAL}} coins' in html)
+
 
 if __name__ == '__main__':
     unittest.main()
